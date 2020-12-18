@@ -1,0 +1,118 @@
+tsc --init // to generate tsconfig.json
+
+****** object in typescript***********
+let obj: {name:string,age:number,and so on......}={
+    name: "ali",
+    age: 20
+}
+
+
+****** components props in typescript***********
+
+type Props={
+    question: string;
+    totalQuestion: number;
+    answers: string[];
+}
+
+export const QuestionCard React.FC<Props>=({question,totalQuestion})=>{
+
+}
+
+******create your own type***********
+type Age= number
+
+type Person={
+    name: string;
+    age: Age
+}
+
+
+
+
+******dangerouslySetInnerHTML***********
+
+answers.map((answer)=>{
+    <div>
+        <span dangerouslySetInnerHTML={{__html:answer}}/>
+    </div>
+})
+
+******Enum data type in typescript***********
+export const fetchData=async (amount:number,difficulty:Difficulty)=>{
+    const endPoing=`api`
+    const data=await(await fetch(endPoing)).json()
+}
+export enum Difficulty{
+    EASY:"easy",
+    MEDIUM:"medium",
+    HARD:"hard"
+}
+
+******how to pass enum as a function parameter ***********
+
+function(Difficulty.EASY)
+
+
+******how to combine two typescript types ***********
+
+const type type1{
+    question: string;
+    totalQuestion: number;   
+}
+
+const type type2=type1 & {answer: string[]}
+
+
+******how to update value of state ***********
+
+setScore(prev=>prev+1)// it will update score by 1
+
+******tuples in typescript***********
+
+let arr: [number,string,boolean,string,number]=[5,'hello',true,'ali',5]
+
+******function in typescript***********
+
+function add (a:number,b:number) : number // it shows return type {
+    return a+b
+}
+add(4,5)
+
+******function signature in typescript***********
+type Add=(num1: number,num2: number)=> number
+
+let add: Add(num1: number, num2: number): number => {
+    return num1 + num2  
+}
+
+******first option of using generic type in typescript***********
+
+type Filter<T>={
+    (name: T): T
+}
+
+// now using with number type
+
+let myFilter: Filter<number>=(num1: number): number =>{
+    return 5
+}
+
+// now using with string type
+
+let myFilter: Filter<string>=(str: string): string =>{
+    return "ali"
+}
+
+
+******second option of using generic type in typescript***********
+ function myData <T> (parameter: T) : T {
+     return parameter
+ }
+
+ // now you can call it either with number type or with string type
+
+
+ myData<number>(5)  // calling with int type
+
+ myData<string>("ali")  // calling with string type
