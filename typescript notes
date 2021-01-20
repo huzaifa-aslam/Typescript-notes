@@ -2,7 +2,7 @@ tsc --init // to generate tsconfig.json
 
 ****** object in typescript***********
 let obj: {name:string,age:number,and so on......}={
-    name: "ali",
+    name: "Hamza",
     age: 20
 }
 
